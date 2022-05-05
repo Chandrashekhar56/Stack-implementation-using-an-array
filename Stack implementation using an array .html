@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    var position_of_top = -1;
+    var maximum = 10;
+    var arr=[maximum];
+    function push(m)
+    {
+      if (position_of_top >= (maximum - 1))
+      {
+        document.write("<br/>Overflow(insertion not possible): "+m);
+      }
+      else
+      {
+        arr[++position_of_top] = m;
+        document.write("<br/>Inserted element in stack: "+m);
+      }
+    }
+    function pop()
+    {
+
+      if (position_of_top < 0)
+      {
+        document.write("Underflow(deletion not possible)<br/>");
+      }
+      else
+      {
+        var m = arr[position_of_top--];
+        document.write("<br/>Popped element from stack: "+m);
+      }
+    }
+    function peek()
+    {
+      document.write("<br/>Top Element in the stack :");
+      if (position_of_top < 0)
+      {
+        document.write("Stack is Empty");
+      }
+      else
+      {
+        var m = arr[position_of_top];
+        document.write(m);
+      }
+    }
+
+    function display()
+    {
+        var m=0;
+        if(position_of_top < 0)
+        {
+                  document.write("Stack is Empty");
+        }
+        else
+        {
+              document.write("<br/>Elements in the stack : ");
+                 while(position_of_top>=0)
+                 {
+                     m = arr[position_of_top--];
+                     document.write(" "+m);
+                 }
+        }
+    }
+    push(10);
+    push(11);
+    push(12);
+    push(13);
+    push(14);
+    push(15);
+    push(16);
+    push(17);
+    push(18);
+    push(19);
+    push(20);
+    push(21);
+    document.write("<br/>");
+    pop();
+    pop();
+    pop();
+    document.write("<br/>");
+    peek();
+    document.write("<br/>");
+    display();
+    document.write("<br/>");
+    </script>
+  </body>
+</html>
